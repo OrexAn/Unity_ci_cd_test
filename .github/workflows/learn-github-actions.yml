@@ -3,21 +3,20 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      #- name: Set up Unity
-      #  uses: game-ci/setup-unity@v1
-      #  with:
-      #    unity-version: 2022.3.1f1
-      #    components: Unity, Windows
+      - name: Set up Unity
+        uses: OrexAn/setup-unity-action@v1
+        with:
+          unity-version: 2022.3.1f1
+          components: Unity, Windows
 
       - name: Build Unity project
         run: |
-          Start-Process -FilePath "C:\Program Files\Unity\Hub\Editor\2022.3.1f1\Editor\Unity.exe" -ArgumentList "-batchmode", "-projectPath", ".", "-executeMethod", "BuildScript.BuildWindowsStandalone", "-quit"
-
+          unity -batchmode -projectPath . -executeMethod Builder.BuildWindowsStandalone -quit
 
       # Additional steps for handling build output, testing, and deployment can be added here
       
