@@ -2,7 +2,7 @@ name: unity-build
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
