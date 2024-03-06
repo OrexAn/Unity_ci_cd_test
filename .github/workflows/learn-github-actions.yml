@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   check-bats-version:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
 
       - name: Build Unity project
         run: |
-          wine "C:\Program Files\Unity\Hub\Editor\2022.3.1f1\Editor\Unity.exe" -batchmode -projectPath . -executeMethod Builder.BuildWindowsStandalone -quit
+          "C:\Program Files\Unity\Hub\Editor\2022.3.1f1\Editor\Unity.exe" -batchmode -projectPath . -executeMethod Builder.BuildWindowsStandalone -quit
 
       # Additional steps for handling build output, testing, and deployment can be added here
       
