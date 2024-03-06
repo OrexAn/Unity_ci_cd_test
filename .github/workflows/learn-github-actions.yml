@@ -33,7 +33,6 @@ jobs:
           prerelease: false
 
       - name: Find build artifacts
-          id: find_artifacts
           run: |
             EXECUTABLE_PATH=$(find ${{ github.workspace }} -type f -name "*.exe")
             EXECUTABLE_NAME=$(basename "$EXECUTABLE_PATH")
