@@ -11,7 +11,7 @@ jobs:
       - name: Set up Unity
         uses: OrexAn/setup-unity-action/.github/actions/setup-unity-action@v1.6
         with:
-          unity-version: 2022.3.1f1
+          unity-version: f18e0c1b5784
           components: Unity, Windows
 
       - name: Build Unity project
