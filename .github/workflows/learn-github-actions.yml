@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Unity
-        uses: OrexAn/setup-unity-action/.github/actions/setup-unity-action@v1.93
+        uses: OrexAn/setup-unity-action/.github/actions/setup-unity-action@v1.94
         with:
           unity-version: f18e0c1b5784
           components: Unity, Windows
